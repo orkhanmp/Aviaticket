@@ -1,0 +1,34 @@
+﻿@model List<Ticket>
+
+<h2>Aviabilet Management</h2>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Type</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Baggage</th>
+        <th>Meal</th>
+        <th>Seat</th>
+        <th>Wifi</th>
+        <th>Fast Check-in</th>
+    </tr>
+
+    @foreach (var ticket in Model)
+    {
+        <tr>
+            <td>@ticket.Type</td>
+            <td>@ticket.Country</td>
+            <td>@ticket.City</td>
+            <td>@ticket.FlightDate.ToShortDateString()</td>
+            <td>@ticket.Price</td>
+            <td>@ticket.BaggageKg kg</td>
+            <td>@ticket.Meal</td>
+            <td>@ticket.SeatSelection</td>
+            <td>@ticket.Wifi</td>
+            <td>@ticket.FastCheckIn</td>
+        </tr>
+    }
+</table>
